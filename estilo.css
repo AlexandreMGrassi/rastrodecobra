@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Special+Elite&family=Montserrat:wght@400;700&display=swap');
+
+:root { 
+            --vinho-vivo: #6b2d5c; 
+            --ocre: #c07b3d; 
+            --papel: #f4f1ea;
+            --terra: #5c4033; 
+            --texto: #2c2c2c;
+            --sombra: rgba(0,0,0,0.15);
+        }
+        
+        body { 
+            font-family: 'Montserrat', sans-serif; 
+            line-height: 1.8; 
+            margin: 0; 
+            background-color: var(--papel); 
+            color: var(--texto);
+            font-size: 1.4rem; 
+            background-image: url('https://www.transparenttextures.com/patterns/aged-paper.png');
+            overflow-x: hidden;
+        }
+
+        header { 
+            background: var(--vinho-vivo); 
+            color: #fff; 
+            padding: 7rem 1rem 4rem 1rem; 
+            text-align: center; 
+            border-bottom: 15px solid var(--ocre);
+            position: relative;
+        }
+
+        header h1 { 
+            margin: 0; 
+            font-size: 4.5rem; 
+            font-family: 'Playfair Display', serif; 
+            letter-spacing: -1px;
+            text-shadow: 4px 4px 0px var(--ocre);
+            position: relative;
+            z-index: 2;
+        }
+
+        header .subtitle { 
+            font-family: 'Special Elite', cursive;
+            font-size: 1.8rem; 
+            margin-top: 15px;
+            display: block;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Ilustrações de Cobras */
+        .snake-icon {
+            position: absolute;
+            fill: rgba(255,255,255,0.1);
+            pointer-events: none;
+        }
+
+        .snake-header {
+            top: 20px;
+            right: 10%;
+            width: 150px;
+            transform: rotate(15deg);
+        }
+
+        .snake-float {
+            position: fixed;
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        .intro-phrase {
+            background: #fff;
+            color: var(--texto);
+            padding: 4rem 2rem;
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.8rem;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .container { max-width: 900px; margin: auto; padding: 4rem 1.5rem; position: relative; }
+
+        .card-zine {
+            background: #fff;
+            padding: 3.5rem;
+            border: 1px solid #ddd;
+            margin-bottom: 5rem;
+            box-shadow: 15px 15px 0px var(--ocre);
+            transform: rotate(-0.5deg);
+            position: relative;
+        }
+
+        .card-zine:nth-child(even) { 
+            transform: rotate(0.8deg); 
+            box-shadow: 15px 15px 0px var(--vinho-vivo); 
+        }
+
+	.secao { margin-bottom: 6rem; }
+
+        h2 { 
+            font-family: 'Playfair Display', serif; 
+            font-size: 2.6rem;
+            color: var(--vinho-vivo); 
+            margin-top: 0;
+            border-bottom: 4px double var(--ocre);
+            display: inline-block;
+        }
+
+        .ney-box {
+            background: #fff;
+            padding: 2.5rem;
+            border: 3px dashed var(--vinho-vivo);
+            margin-bottom: 5rem;
+            font-family: 'Special Elite', cursive;
+            text-align: center;
+        }
+
+        .biografia-box { font-family: 'Georgia', serif; }
+
+        .wolf-section {
+            background: var(--vinho-vivo);
+            color: white;
+            padding: 3.5rem;
+            border-radius: 0 60px 0 60px;
+            margin-bottom: 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .wolf-section h2 { color: white; border-bottom-color: white; }
+
+        .stats-box {
+            background: white;
+            color: black;
+            padding: 2rem;
+            border-left: 10px solid var(--ocre);
+            margin: 2rem 0;
+            font-size: 1.2rem;
+        }
+
+        .corrente-box {
+            background: #fff;
+            padding: 3.5rem;
+            border: 1px solid #ddd;
+            margin-bottom: 5rem;
+            box-shadow: 15px 15px 0px var(--ocre);
+            border-left: 15px solid var(--vinho-vivo);
+        }
+
+        .corrente-item {
+            margin-bottom: 20px;
+        }
+
+        .corrente-item strong {
+            color: var(--vinho-vivo);
+            /*text-transform: uppercase;*/
+            font-family: 'Special Elite', cursive;
+        }
+
+        .e-mail-area {
+            text-align: center;
+            background: #fff;
+            border: 4px dashed var(--ocre);
+            padding: 4rem 2rem;
+        }
+
+        .e-mail {
+            background: #eee;
+            padding: 1rem 2rem;
+            font-size: 1.5rem;
+            font-family: 'Special Elite', cursive;
+            display: inline-block;
+            margin: 25px 0;
+            color: var(--vinho-vivo);
+        }
+
+        .apoiadores-lista {
+            margin-top: 2rem;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        footer { 
+            text-align: center; 
+            padding: 5rem 1rem; 
+            background: #2c2c2c; 
+            color: #fff; 
+            font-family: 'Special Elite', cursive;
+        }
+        
+        .em-construcao {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            margin-top: 20px;
+            display: block;
+        }
+
+        /* SVG Art */
+        .snake-svg {
+            display: block;
+            margin: 20px auto;
+            width: 100px;
+            fill: var(--ocre);
+        }
