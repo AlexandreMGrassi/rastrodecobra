@@ -184,6 +184,25 @@
             font-size: 1.2rem;
         }
 
+/*Início da descrição de estilo para a imagem no Header*/
+        .logo-header-img {
+            position: absolute;
+            left: 50px; /* Ajuste a distância da borda esquerda */
+            top: 50%;
+            transform: translateY(-50%);
+            height: 280px; /* Tamanho da imagem */
+            opacity: 0.9;
+            z-index: 1;
+        }
+
+        /* Ajuste para telas menores para não sobrepor o texto */
+        @media (max-width: 768px) {
+            .logo-header-img {
+                display: none; /* Esconde em telas pequenas ou você pode diminuir o tamanho */
+            }
+        }
+/*Fim da descrição de estilo para a imagem no Header*/
+
         footer { 
             text-align: center; 
             padding: 5rem 1rem; 
@@ -205,4 +224,5 @@
             margin: 20px auto;
             width: 100px;
             fill: var(--ocre);
+
         }
