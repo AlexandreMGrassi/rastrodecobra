@@ -184,7 +184,7 @@
             font-size: 1.2rem;
         }
 
-/*Início da descrição de estilo para a imagem no Header*/
+		/*Início da descrição de estilo para a imagem no Header*/
         .logo-header-img {
             position: absolute;
             left: 50px; /* Ajuste a distância da borda esquerda */
@@ -201,7 +201,74 @@
                 display: none; /* Esconde em telas pequenas ou você pode diminuir o tamanho */
             }
         }
-/*Fim da descrição de estilo para a imagem no Header*/
+        /*Fim da descrição de estilo para a imagem no Header*/
+        /*Início da descrição de estilo para a imagem na section-wolf*/
+        .wolf-img {
+            float: right;
+            width: 140px;
+            margin: 0 0 20px 25px;
+        }
+
+        /* Ajuste para dispositivos móveis */
+        @media (max-width: 768px) {
+            .wolf-img {
+                float: none;
+                display: block;
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto 30px;
+            }
+        }
+        /*Fim da descrição de estilo para a imagem na section-wolf*/
+        /*Início da descrição de estilo para a imagem na card-zine biografia-box*/
+        /* Alinhamento para o título com o selo */
+        .resgate-header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Empurra os elementos para as extremidades */
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            width: 100%;
+        }
+
+        .logo-resgate-p {
+            width: 180px; /* Aumentei um pouco para melhor visibilidade */
+            height: auto;
+            margin-right: -10px; /* Ajuste fino para aproximar ainda mais da borda */
+        }
+
+        //* Ajuste para mobile */
+        @media (max-width: 768px) {
+            .resgate-header-container {
+                flex-direction: row; /* Mantém lado a lado mesmo no celular se houver espaço */
+                justify-content: space-between;
+            }
+            .logo-resgate-p {
+                width: 80px;
+            }
+        }
+        /*Fim da descrição de estilo para a imagem na card-zine biografia-box*/
+        /*Início da descrição de estilo para a imagem na corrente-box*/
+        .corrente-img {
+            float: right;
+            width: 250px;
+            height: auto;
+            margin: 0 0 20px 20px;
+            padding: 5px;
+            background-color: #fff;
+        }
+
+        /* Ajuste para telas pequenas */
+        @media (max-width: 768px) {
+            .corrente-img {
+                float: none;
+                display: block;
+                margin: 0 auto 20px;
+                width: 100%;
+                max-width: 250px;
+            }
+        }
+        /*Fim da descrição de estilo para a imagem na corrente-box*/
 
         footer { 
             text-align: center; 
@@ -226,3 +293,4 @@
             fill: var(--ocre);
 
         }
+
