@@ -1,365 +1,299 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Special+Elite&family=Montserrat:wght@400;700&display=swap');
 
-:root {
-  --vinho-vivo: #6b2d5c;
-  --ocre: #c07b3d;
-  --papel: #f4f1ea;
-  --terra: #5c4033;
-  --texto: #2c2c2c;
-  --sombra: rgba(0,0,0,0.15);
-}
+:root { 
+            --vinho-vivo: #6b2d5c; 
+            --ocre: #c07b3d; 
+            --papel: #f4f1ea;
+            --terra: #5c4033; 
+            --texto: #2c2c2c;
+            --sombra: rgba(0,0,0,0.15);
+        }
+        
+        body { 
+            font-family: 'Montserrat', sans-serif; 
+            line-height: 1.8; 
+            margin: 0; 
+            background-color: var(--papel); 
+            color: var(--texto);
+            font-size: 1.4rem; 
+            background-image: url('https://www.transparenttextures.com/patterns/aged-paper.png');
+            overflow-x: hidden;
+        }
 
-/* ALTERAÇÃO: box-sizing global para facilitar cálculos de largura/padding */
-*,
-*::before,
-*::after {
-  box-sizing: border-box; /* ALTERAÇÃO */
-}
+        header { 
+            background: var(--vinho-vivo); 
+            color: #fff; 
+            padding: 7rem 1rem 4rem 1rem; 
+            text-align: center; 
+            border-bottom: 15px solid var(--ocre);
+            position: relative;
+        }
 
-body {
-  font-family: 'Montserrat', sans-serif;
-  line-height: 1.8;
-  margin: 0;
-  background-color: var(--papel);
-  color: var(--texto);
-  /* ALTERAÇÃO: usar clamp para tornar fonte base responsiva */
-  font-size: clamp(1rem, 1rem + 0.5vw, 1.4rem); /* ALTERAÇÃO */
-  background-image: url('https://www.transparenttextures.com/patterns/aged-paper.png');
-  overflow-x: hidden;
-}
+        header h1 { 
+            margin: 0; 
+            font-size: 4.5rem; 
+            font-family: 'Playfair Display', serif; 
+            letter-spacing: -1px;
+            text-shadow: 4px 4px 0px var(--ocre);
+            position: relative;
+            z-index: 2;
+        }
 
-/* HEADER responsivo com flexbox */
-header.site-header { /* ALTERAÇÃO: usei classe .site-header */
-  background: var(--vinho-vivo);
-  color: #fff;
-  padding: 4rem 1rem 2.5rem 1rem; /* ALTERAÇÃO: reduzido para mobile */
-  border-bottom: 15px solid var(--ocre);
-  position: relative;
-}
+        header .subtitle { 
+            font-family: 'Special Elite', cursive;
+            font-size: 1.8rem; 
+            margin-top: 15px;
+            display: block;
+            position: relative;
+            z-index: 2;
+        }
 
-/* ALTERAÇÃO: wrapper interno para alinhar logo e texto */
-.header-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: flex; /* ALTERAÇÃO */
-  align-items: center; /* ALTERAÇÃO */
-  gap: 1.5rem; /* ALTERAÇÃO */
-  padding: 0 1rem;
-}
+        /* Ilustrações de Cobras */
+        .snake-icon {
+            position: absolute;
+            fill: rgba(255,255,255,0.1);
+            pointer-events: none;
+        }
 
-/* ALTERAÇÃO: container do texto do header para controlar alinhamento */
-.header-text {
-  text-align: center;
-  flex: 1; /* ocupa espaço restante */
-  position: relative;
-  z-index: 2;
-}
+        .snake-header {
+            top: 20px;
+            right: 10%;
+            width: 150px;
+            transform: rotate(15deg);
+        }
 
-/* ALTERAÇÃO: usar clamp para h1 responsivo */
-header h1 {
-  margin: 0;
-  font-size: clamp(3.5rem, 4vw + 0.5rem, 4.5rem); /* ALTERAÇÃO */
-  font-family: 'Playfair Display', serif;
-  letter-spacing: -1px;
-  text-shadow: 4px 4px 0px var(--ocre);
-  position: relative;
-  z-index: 2;
-}
+        .snake-float {
+            position: fixed;
+            opacity: 0.1;
+            z-index: -1;
+        }
 
-/* subtitle menor em telas pequenas */
-header .subtitle {
-  font-family: 'Special Elite', cursive;
-  font-size: clamp(1rem, 1.2vw + 0.8rem, 1.8rem); /* ALTERAÇÃO */
-  margin-top: 10px; /* ALTERAÇÃO */
-  display: block;
-  position: relative;
-  z-index: 2;
-}
+        .intro-phrase {
+            background: #fff;
+            color: var(--texto);
+            padding: 4rem 2rem;
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.8rem;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
 
-/* Ilustrações de Cobras */
-.snake-icon {
-  position: absolute;
-  fill: rgba(255,255,255,0.1);
-  pointer-events: none;
-}
+        .container { max-width: 900px; margin: auto; padding: 4rem 1.5rem; position: relative; }
 
-/* Ajuste do ícone no header para não sobrepor em mobile */
-.snake-header {
-  top: -50px;
-  right: -10%;
-  width: 120px;
-  transform: rotate(15deg);
-  opacity: 0.6;
-}
+        .card-zine {
+            background: #fff;
+            padding: 3.5rem;
+            border: 1px solid #ddd;
+            margin-bottom: 5rem;
+            box-shadow: 15px 15px 0px var(--ocre);
+            transform: rotate(-0.5deg);
+            position: relative;
+        }
 
-/* logo do header agora responsiva e sem altura fixa */
-.logo-header-img {
-  /* ALTERAÇÃO: removi posicionamento absoluto e altura fixa */
-  width: 250px; /* ALTERAÇÃO: tamanho padrão */
-  height: auto; /* ALTERAÇÃO */
-  opacity: 0.95;
-  z-index: 1;
-  flex-shrink: 0; /* não encolhe demais */
-  margin-left: 0; /* alinhamento */
-}
+        .card-zine:nth-child(even) { 
+            transform: rotate(0.8deg); 
+            box-shadow: 15px 15px 0px var(--vinho-vivo); 
+        }
 
-/* Intro phrase */
-.intro-phrase {
-  background: #fff;
-  color: var(--texto);
-  padding: 3rem 1.5rem; /* ALTERAÇÃO: padding reduzido */
-  text-align: center;
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-size: clamp(1.1rem, 1.2vw + 0.8rem, 1.8rem); /* ALTERAÇÃO */
-  border-bottom: 1px solid rgba(0,0,0,0.1);
-  max-width: 900px;
-  margin: 0 auto;
-  position: relative;
-}
+    .secao { margin-bottom: 6rem; }
 
-.container {
-  max-width: 900px;
-  margin: auto;
-  padding: 3rem 1rem; /* ALTERAÇÃO: padding reduzido */
-  position: relative;
-}
+        h2 { 
+            font-family: 'Playfair Display', serif; 
+            font-size: 2.6rem;
+            color: var(--vinho-vivo); 
+            margin-top: 0;
+            border-bottom: 4px double var(--ocre);
+            display: inline-block;
+        }
 
-/* Card zine */
-.card-zine {
-  background: #fff;
-  padding: 2.5rem; /* ALTERAÇÃO: padding reduzido */
-  border: 1px solid #ddd;
-  margin-bottom: 3.5rem; /* ALTERAÇÃO: espaçamento reduzido */
-  box-shadow: 15px 15px 0px var(--ocre);
-  transform: rotate(-0.5deg);
-  position: relative;
-}
+        .ney-box {
+            background: #fff;
+            padding: 2.5rem;
+            border: 3px dashed var(--vinho-vivo);
+            margin-bottom: 5rem;
+            font-family: 'Special Elite', cursive;
+            text-align: center;
+        }
 
-/* Evitar rotações em telas pequenas que atrapalham leitura */
-@media (max-width: 768px) {
-  .card-zine {
-    transform: none; /* ALTERAÇÃO */
-    box-shadow: 6px 6px 0px var(--ocre); /* ALTERAÇÃO */
-    padding: 1.8rem; /* ALTERAÇÃO */
-  }
-}
+        .biografia-box { font-family: 'Georgia', serif; }
 
-.card-zine:nth-child(even) {
-  transform: rotate(0.8deg);
-  box-shadow: 15px 15px 0px var(--vinho-vivo);
-}
+        .wolf-section {
+            background: var(--vinho-vivo);
+            color: white;
+            padding: 3.5rem;
+            border-radius: 0 60px 0 60px;
+            margin-bottom: 5rem;
+            position: relative;
+            overflow: hidden;
+        }
 
-/* Seção geral */
-.secao { margin-bottom: 3.5rem; } /* ALTERAÇÃO */
+        .wolf-section h2 { color: white; border-bottom-color: white; }
 
-/* Títulos */
-h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(1.4rem, 1.6vw + 1rem, 2.6rem); /* ALTERAÇÃO */
-  color: var(--vinho-vivo);
-  margin-top: 0;
-  border-bottom: 4px double var(--ocre);
-  display: inline-block;
-}
+        .stats-box {
+            background: white;
+            color: black;
+            padding: 2rem;
+            border-left: 10px solid var(--ocre);
+            margin: 2rem 0;
+            font-size: 1.2rem;
+        }
 
-.wolf-section h2 { color: white; border-bottom-color: white; }
+        .corrente-box {
+            background: #fff;
+            padding: 3.5rem;
+            border: 1px solid #ddd;
+            margin-bottom: 5rem;
+            box-shadow: 15px 15px 0px var(--ocre);
+            border-left: 15px solid var(--vinho-vivo);
+        }
 
-/* Ney box */
-.ney-box {
-  background: #fff;
-  padding: 2rem; /* ALTERAÇÃO */
-  border: 3px dashed var(--vinho-vivo);
-  margin-bottom: 3rem; /* ALTERAÇÃO */
-  font-family: 'Special Elite', cursive;
-  text-align: center;
-}
+        .corrente-item {
+            margin-bottom: 20px;
+        }
 
-/* Biografia */
-.biografia-box { font-family: 'Georgia', serif; }
+        .corrente-item strong {
+            color: var(--vinho-vivo);
+            /*text-transform: uppercase;*/
+            font-family: 'Special Elite', cursive;
+        }
 
-/* Wolf section */
-.wolf-section {
-  background: var(--vinho-vivo);
-  color: white;
-  padding: 2.5rem; /* ALTERAÇÃO */
-  border-radius: 0 60px 0 60px;
-  margin-bottom: 3.5rem; /* ALTERAÇÃO */
-  position: relative;
-  overflow: hidden;
-}
+        .e-mail-area {
+            text-align: center;
+            background: #fff;
+            border: 4px dashed var(--ocre);
+            padding: 4rem 2rem;
+        }
 
-/* stats box */
-.stats-box {
-  background: white;
-  color: black;
-  padding: 1.5rem; /* ALTERAÇÃO */
-  border-left: 10px solid var(--ocre);
-  margin: 1.5rem 0; /* ALTERAÇÃO */
-  font-size: 1.05rem; /* ALTERAÇÃO */
-}
+        .e-mail {
+            background: #eee;
+            padding: 1rem 2rem;
+            font-size: 1.5rem;
+            font-family: 'Special Elite', cursive;
+            display: inline-block;
+            margin: 25px 0;
+            color: var(--vinho-vivo);
+        }
 
-/* Corrente box */
-.corrente-box {
-  background: #fff;
-  padding: 2.5rem; /* ALTERAÇÃO */
-  border: 1px solid #ddd;
-  margin-bottom: 3.5rem; /* ALTERAÇÃO */
-  box-shadow: 15px 15px 0px var(--ocre);
-  border-left: 15px solid var(--vinho-vivo);
-}
+        .apoiadores-lista {
+            margin-top: 2rem;
+            text-align: center;
+            font-size: 1.2rem;
+        }
 
-/* E-mail area */
-.e-mail-area {
-  text-align: center;
-  background: #fff;
-  border: 4px dashed var(--ocre);
-  padding: 3rem 1.5rem; /* ALTERAÇÃO */
-}
+        /*Início da descrição de estilo para a imagem no Header*/
+        .logo-header-img {
+            position: absolute;
+            left: 50px; /* Ajuste a distância da borda esquerda */
+            top: 50%;
+            transform: translateY(-50%);
+            height: 280px; /* Tamanho da imagem */
+            opacity: 0.9;
+            z-index: 1;
+        }
 
-/* E-mail */
-.e-mail {
-  background: #eee;
-  padding: 0.8rem 1.5rem; /* ALTERAÇÃO */
-  font-size: 1.2rem; /* ALTERAÇÃO */
-  font-family: 'Special Elite', cursive;
-  display: inline-block;
-  margin: 20px 0; /* ALTERAÇÃO */
-  color: var(--vinho-vivo);
-}
+        /* Ajuste para telas menores para não sobrepor o texto */
+        @media (max-width: 768px) {
+            .logo-header-img {
+                display: none; /* Esconde em telas pequenas ou você pode diminuir o tamanho */
+            }
+        }
+        /*Fim da descrição de estilo para a imagem no Header*/
+        /*Início da descrição de estilo para a imagem na section-wolf*/
+        .wolf-img {
+            float: right;
+            width: 140px;
+            margin: 0 0 20px 25px;
+        }
 
-/* Imagem wolf */
-.wolf-img {
-  float: right;
-  width: 140px;
-  margin: 0 0 20px 25px;
-}
+        /* Ajuste para dispositivos móveis */
+        @media (max-width: 768px) {
+            .wolf-img {
+                float: none;
+                display: block;
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto 30px;
+            }
+        }
+        /*Fim da descrição de estilo para a imagem na section-wolf*/
+        /*Início da descrição de estilo para a imagem na card-zine biografia-box*/
+        /* Alinhamento para o título com o selo */
+        .resgate-header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Empurra os elementos para as extremidades */
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            width: 100%;
+        }
 
-/* Ajuste para dispositivos móveis */
-@media (max-width: 768px) {
-  .wolf-img {
-    float: none;
-    display: block;
-    width: 100%;
-    max-width: 300px;
-    margin: 0 auto 20px;
-  }
-}
+        .logo-resgate-p {
+            width: 180px; /* Aumentei um pouco para melhor visibilidade */
+            height: auto;
+            margin-right: -10px; /* Ajuste fino para aproximar ainda mais da borda */
+        }
 
-/* Imagem wolf */
-.corrente-img {
-  float: right;
-  width: 140px;
-  margin: 0 0 20px 25px;
-}
+        //* Ajuste para mobile */
+        @media (max-width: 768px) {
+            .resgate-header-container {
+                flex-direction: row; /* Mantém lado a lado mesmo no celular se houver espaço */
+                justify-content: space-between;
+            }
+            .logo-resgate-p {
+                width: 80px;
+            }
+        }
+        /*Fim da descrição de estilo para a imagem na card-zine biografia-box*/
+        /*Início da descrição de estilo para a imagem na corrente-box*/
+        .corrente-img {
+            float: right;
+            width: 250px;
+            height: auto;
+            margin: 0 0 20px 20px;
+            padding: 5px;
+            background-color: #fff;
+        }
 
-/* Ajuste para dispositivos móveis */
-@media (max-width: 768px) {
-  .corrente-img {
-    float: none;
-    display: block;
-    width: 100%;
-    max-width: 300px;
-    margin: 0 auto 20px;
-  }
-}
+        /* Ajuste para telas pequenas */
+        @media (max-width: 768px) {
+            .corrente-img {
+                float: none;
+                display: block;
+                margin: 0 auto 20px;
+                width: 100%;
+                max-width: 250px;
+            }
+        }
+        /*Fim da descrição de estilo para a imagem na corrente-box*/
 
-/* Resgate header container */
-.resgate-header-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 2rem; /* ALTERAÇÃO */
-  margin-bottom: 1rem;
-  width: 100%;
-}
+        footer { 
+            text-align: center; 
+            padding: 5rem 1rem; 
+            background: #2c2c2c; 
+            color: #fff; 
+            font-family: 'Special Elite', cursive;
+        }
+        
+        .em-construcao {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            margin-top: 20px;
+            display: block;
+        }
 
-/* Logo resgate */
-.logo-resgate-p {
-  width: 180px;
-  height: auto;
-  margin-right: -10px;
-}
-
-/* ALTERAÇÃO: media queries para mobile */
-@media (max-width: 768px) {
-  .header-inner {
-    flex-direction: column; /* ALTERAÇÃO: empilha logo e texto em mobile */
-    gap: 0.6rem;
-    align-items: center;
-  }
-
-  .resgate-header-container {
-    flex-direction: column; /* ALTERAÇÃO: empilha selo e título */
-    align-items: flex-start;
-    gap: 0.8rem;
-  }
-
-  .logo-resgate-p {
-    width: 90px; /* ALTERAÇÃO: reduzido para mobile */
-    margin-right: 0;
-  }
-
-  .logo-header-img {
-    width: 110px; /* ALTERAÇÃO: reduzido para mobile */
-    margin-bottom: 0.4rem;
-  }
-
-  header {
-    padding: 3rem 1rem 1.5rem 1rem; /* ALTERAÇÃO: reduzir padding em mobile */
-  }
-
-  .intro-phrase {
-    padding: 2rem 1rem;
-    font-size: clamp(1rem, 1vw + 0.8rem, 1.3rem);
-  }
-
-  .container {
-    padding: 2rem 1rem;
-  }
-
-  .h1, header h1 {
-    text-align: center;
-  }
-}
-
-/* Ajustes finos para telas muito pequenas */
-@media (max-width: 420px) {
-  header h1 {
-    font-size: clamp(1.6rem, 4vw, 2.4rem); /* ALTERAÇÃO: reduzir ainda mais */
-  }
-
-  .logo-header-img {
-    width: 90px;
-  }
-
-  .card-zine, .corrente-box, .wolf-section {
-    padding: 1.2rem;
-  }
-
-  .e-mail {
-    font-size: 1rem;
-    padding: 0.6rem 1rem;
-  }
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 4rem 1rem; /* ALTERAÇÃO: padding reduzido */
-  background: #2c2c2c;
-  color: #fff;
-  font-family: 'Special Elite', cursive;
-}
-
-/* SVG Art */
-.snake-svg {
-  display: block;
-  margin: 20px auto;
-  width: 100px;
-  fill: var(--ocre);
+        /* SVG Art */
+        .snake-svg {
+            display: block;
+            margin: 20px auto;
+            width: 100px;
+            fill: var(--ocre);
 
         }
+
 
 
 
