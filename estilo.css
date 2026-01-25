@@ -163,6 +163,8 @@ h2 {
   display: inline-block;
 }
 
+.wolf-section h2 { color: white; border-bottom-color: white; }
+
 /* Ney box */
 .ney-box {
   background: #fff;
@@ -358,5 +360,6 @@ footer {
   fill: var(--ocre);
 
         }
+
 
 
